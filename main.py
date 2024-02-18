@@ -6,9 +6,11 @@ from libs.logic import phrase as wiki_phrase
 
 app = FastAPI()
 
+
 @app.get("/")
 async def root():
     return {"message": "Wikipedia API. Call /search or /wiki or /phrase"}
+
 
 @app.get("/search/{query}")
 async def add(query: str):
@@ -17,12 +19,14 @@ async def add(query: str):
     result = search_wiki(query)
     return {"result": result}
 
+
 @app.get("/wiki/{name}")
 async def wiki(name: str):
     """Retrieve Wikipedia page"""
 
     result = wiki_logic(name)
     return {"result": result}
+
 
 @app.get("/phrase/{name}")
 async def phrase(name: str):
@@ -31,5 +35,6 @@ async def phrase(name: str):
     result = wiki_phrase(name)
     return {"result": result}
 
-if __name__ == '__main__':
-    uvicorn.run(app, port=8080, host='0.0.0.0')
+
+if __name__ == "__main__":
+    uvicorn.run(app, port=8080, host="0.0.0.0")

@@ -8,11 +8,13 @@ def wiki(name="War Goddess", length=1):
     my_wiki = wikipedia.summary(name, length)
     return my_wiki
 
+
 def search_wiki(name):
     """Search wikipedia for name"""
 
     result = wikipedia.search(name)
     return result
+
 
 def phrase(name):
     """Return a phrase"""
