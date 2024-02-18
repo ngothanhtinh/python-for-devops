@@ -5,4 +5,6 @@ pylint==2.13.5
 black==22.3.0
 fire==0.4.0
 urllib3==1.26.6
-ipython
+fastapi==0.75.1
+uvicorn==0.17.6
+textblob==0.17.1
