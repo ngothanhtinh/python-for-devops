@@ -1,9 +1,5 @@
 from fastapi.testclient import TestClient
 from main import app
-import nltk
-
-nltk.download("brown")
-nltk.download("punkt")
 
 client = TestClient(app)
 
