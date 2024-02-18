@@ -2,3 +2,4 @@
 
 # python-for-devops
 - pip freeze | less
+- https://github.com/actions/setup-python
