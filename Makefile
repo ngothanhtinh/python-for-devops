@@ -1,9 +1,11 @@
 install:
 	#install commands
-	pip install --upgrade pip &&\
+	# pip install --upgrade pip
+	python.exe -m pip install --upgrade pip &&\
 		pip install -r requirements.txt
 format:
 	#format code
+	# python -m black {source_file_or_directory}
 	black *.py libs/*.py
 lint:
 	#flake8 or #pylint
@@ -16,7 +18,7 @@ build:
 	docker build -t deploy-fastapi .
 run:
 	#run docker
-	docker run -p 127.0.0.1:8080:8080 853ed243bef4
+	docker run -p 127.0.0.1:8080:8080 ae5459dd5b61
 deploy:
 	#deploy
 all: install lint test deploy
