@@ -94,3 +94,5 @@ jobs:
 - Windows cmd: `cli-fire.py phrase --name "Ho Chi Minh"`
 - macOS: `chmod +x cli-fire.py`, `./cli-fire.py --help`
 - Use: ipython `exit()`
+
+**7. Make `buildspec.yml`**
