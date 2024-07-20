@@ -3,6 +3,8 @@ install:
 	# python.exe -m pip install --upgrade pip
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
+post-install:
+	python -m textblob.download_corpora
 format:
 	#format code
 	# python -m black {source_file_or_directory}
@@ -25,4 +27,4 @@ deploy:
 	docker build -t fastapi_wiki .
 	docker tag fastapi_wiki:latest 419609558773.dkr.ecr.ap-southeast-2.amazonaws.com/fastapi_wiki:latest
 	docker push 419609558773.dkr.ecr.ap-southeast-2.amazonaws.com/fastapi_wiki:latest
-all: install lint test deploy
+all: install post-install lint test deploy
